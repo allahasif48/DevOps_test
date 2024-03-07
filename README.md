@@ -1,2 +1,2 @@
 # DevOps_test
-practice repo1
+practice repo2
