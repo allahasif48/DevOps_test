@@ -6,6 +6,7 @@ pipeline {
             steps {
                 script {
                     // Run a basic shell command
+                    //sdkja
                     def commandOutput = sh(script: 'echo "Hello, Jenkins!"', returnStdout: true).trim()
                     
                     // Print the output
