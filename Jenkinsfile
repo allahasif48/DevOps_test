@@ -8,7 +8,7 @@ pipeline {
                     // Run a basic shell command
                     
                     def commandOutput = sh(script: 'echo "Hello, Jenkins!"', returnStdout: true).trim()
-                    
+                    //
                     // Print the output
                     echo "Shell Command Output: ${commandOutput}"
                 }
