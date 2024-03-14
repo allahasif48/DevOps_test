@@ -8,14 +8,7 @@ pipeline {
         REMOTE_USER = 'ec2-user' // Username to SSH into your EC2 instance
     }
 
-     stage('Checkout') {
-            steps {
-                // Checkout source code from your version control system (e.g., Git)
-                git 'https://github.com/allahasif48/DevOps_test.git'
-            }
-        }
-
-    stages {
+       stages {
         stage('Build Docker Image') {
             steps {
                 script {
