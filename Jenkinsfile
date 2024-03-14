@@ -12,7 +12,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build(env.DOCKER_IMAGE)
+                    docker.build(env.DOCKER_IMAGE, '-f Dockerfile .')
                 }
             }
         }
@@ -27,15 +27,6 @@ pipeline {
             }
         }
 
-        stage('Deploy to EC2') {
-            steps {
-                script {
-                    sshagent(credentials: [env.SSH_KEY]) {
-                        sh "ssh -o StrictHostKeyChecking=no ${env.REMOTE_USER}@${env.REMOTE_HOST} 'docker pull ${env.DOCKER_IMAGE}'"
-                        sh "ssh -o StrictHostKeyChecking=no ${env.REMOTE_USER}@${env.REMOTE_HOST} 'docker run -d -p 80:5000 ${env.DOCKER_IMAGE}'"
-                    }
-                }
-            }
-        }
+       
     }
 }
