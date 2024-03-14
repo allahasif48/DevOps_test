@@ -8,10 +8,10 @@ pipeline {
         REMOTE_USER = 'ec2-user' // Username to SSH into your EC2 instance
     }
 
-    stages {
-        stage('Checkout') {
+     stage('Checkout') {
             steps {
-                checkout scm
+                // Checkout source code from your version control system (e.g., Git)
+                git 'https://github.com/allahasif48/DevOps_test.git'
             }
         }
 
