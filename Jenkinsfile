@@ -15,9 +15,7 @@ pipeline {
                     docker.build("${DOCKER_IMAGE_NAME}", '-f Dockerfile .')
                 }
             }
-        }
-
-        
+        }        
        
     }
 }
