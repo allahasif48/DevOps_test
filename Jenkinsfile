@@ -12,7 +12,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sudo docker.build("${DOCKER_IMAGE}", '-f Dockerfile .')
+                    docker.build("${DOCKER_IMAGE}", '-f Dockerfile .')
                 }
             }
         }        
